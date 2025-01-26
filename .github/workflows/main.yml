@@ -36,9 +36,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-    # Step 4: Run Gradle build
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      # Step 4: Grant execution permissions to gradlew
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./gradlew
 
     # Step 5: Run tests
     - name: Run unit tests
