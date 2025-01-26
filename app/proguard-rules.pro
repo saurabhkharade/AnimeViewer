@@ -19,3 +19,18 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+# Hilt
+-keepattributes *Annotation*
+-keep class dagger.** { *; }
+-keep class javax.inject.** { *; }
+-dontwarn javax.annotation.**
+
+# Retrofit and Gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.google.gson.** { *; }
+-keep class com.squareup.okhttp3.** { *; }
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**
